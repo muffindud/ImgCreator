@@ -18,7 +18,7 @@ def main(file, option):
 
     if option == '-y':
         try:
-            subprocess.run(["vboxmanage", "storageattach", "SlayMachine", "--storagectl", "\"Floppy\"", "--port", "0", "--device", "0", "--type", "fdd", "--medium", os.getcwd() + img_file])
+            subprocess.run(["vboxmanage", "storageattach", "SlayMachine", "--storagectl", ''"Floppy"'', "--port", "0", "--device", "0", "--type", "fdd", "--medium", os.getcwd() + "/" + img_file])
             subprocess.run(["vboxmanage", "startvm", "SlayMachine"])
         except:
             print("Error: Could not attach image to virtual machine.")
@@ -26,7 +26,7 @@ def main(file, option):
             sys.exit(1)
     elif option == '-a':
         try:
-            subprocess.run(["vboxmanage", "storageattach", "SlayMachine", "--storagectl", "\"Floppy\"", "--port", "0", "--device", "0", "--type", "fdd", "--medium", os.getcwd() + img_file])
+            subprocess.run(["vboxmanage", "storageattach", "SlayMachine", "--storagectl", ''"Floppy"'', "--port", "0", "--device", "0", "--type", "fdd", "--medium", os.getcwd() + "/" + img_file])
         except:
             print("Error: Could not attach image to virtual machine.")
             print("Make sure the virtual machine is named SlayMachine and has a floppy controller.")
